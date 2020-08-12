@@ -12,6 +12,7 @@ import {
 } from "recharts";
 import { scaleTime } from "d3-scale";
 import { timeMonth } from "d3-time";
+import currencyFormatter from "../../utils/currencyFormatter";
 
 dayjs.extend(customParseFormat);
 dayjs.extend(isBetween);
@@ -74,6 +75,9 @@ export default function NetworthChart({ data }) {
         }}
       />
       <Tooltip
+        formatter={(value) => {
+          return currencyFormatter(value);
+        }}
         labelStyle={{ color: "#805AD5" }}
         labelFormatter={(value) => {
           return dayjs(value).format("DD/MM/YYYY");
