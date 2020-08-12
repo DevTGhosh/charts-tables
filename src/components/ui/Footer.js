@@ -12,7 +12,8 @@ const StickyFooter = styled.div`
   bottom: 0;
   width: 100%;
   text-align: center;
-  margin: 1rem auto;
+  padding: 1rem;
+  background-color: #f7fafc;
 `;
 
 const Footer = () => (
