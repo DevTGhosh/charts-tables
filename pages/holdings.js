@@ -1,7 +1,7 @@
 import { useQuery } from "react-query";
 import Typography from "@material-ui/core/Typography";
 import { getHoldings } from "../src/api/getCanopyApi";
-import MainLayout from "../src/components/layout/MainLayout";
+import HoldingsTable from "../src/components/sections/HoldingsTable";
 
 export default function holdings(props) {
   const { isLoading, error, data } = useQuery("holdingsData", getHoldings, {
@@ -9,11 +9,10 @@ export default function holdings(props) {
   });
   return (
     <>
-      <MainLayout>
-        <Typography variant="h4" component="h2" gutterBottom>
-          Holdings Table
-        </Typography>
-      </MainLayout>
+      <Typography variant="h4" component="h2" gutterBottom>
+        Holdings Table
+      </Typography>
+      <HoldingsTable data={data.payload} />
     </>
   );
 }
