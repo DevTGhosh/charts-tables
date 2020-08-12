@@ -30,6 +30,12 @@ scheme.configureHeader((builder) => {
       initialHeight: 64,
     });
 });
+const Main = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`;
+
 const Content = styled.div`
   display: flex;
   align-items: center;
@@ -46,14 +52,16 @@ export default function MainLayout(props) {
       {() => (
         <>
           <CssBaseline />
-          <Header>
-            <Toolbar>
-              <MenuBar />
-            </Toolbar>
-          </Header>
+          <Main>
+            <Header>
+              <Toolbar>
+                <MenuBar />
+              </Toolbar>
+            </Header>
 
-          <Content>{props.children}</Content>
-          <Footer />
+            <Content>{props.children}</Content>
+            <Footer />
+          </Main>
         </>
       )}
     </Root>

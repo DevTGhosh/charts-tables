@@ -23,6 +23,7 @@ const CurrencyTypeProvider = (props) => (
 
 const TableDiv = styled.div`
   width: 80vw;
+  margin: 2rem 0;
 `;
 export default function HoldingsTable({ data }) {
   const [tableColumnExtensions] = useState([
